@@ -1,6 +1,6 @@
 module.exports.run = async(client, message, args) =>{
   message.delete();  
-  message.reply(`Enviei meus ``Comandos`` no seu privado`);
+  message.reply(`mandei as informações no privado! da uma checada lá <:blobs_piscadinha:421801047493967872>`);
   message.author.send({embed: {
         color: 12584993,
         author: {
@@ -9,7 +9,7 @@ module.exports.run = async(client, message, args) =>{
         },
         title: "Informações - Zira™",
         url: " ",
-        description: "\/",
+        description: ":warning: Entre em meu grupo , go bater 100 Membros! ::warning: ",
         fields: [{
             name: "Ajuda",
             value: "Quer saber alguns comandos meus? Veja abaixo! (lembrando que os comandos de moderação precisam do cargo `Staff`.)"
@@ -29,10 +29,10 @@ module.exports.run = async(client, message, args) =>{
           {
             name: "Informação & Diversão",
             value: 
-`**z!ping** = Caso queira ver o ping
+`**z!ping** = Caso queira ver o ping do bot
 **z!say** = O bot irá dizer a seguinte frase
 **z!fotografia** = Irá mandar fotos aleatórias de: Artes, lugares e etc...
-**z!serverinfo** = Cachorrinhos!!
+**z!puppy** = Cachorrinhos!!
 **z!botinfo** = Irá mandar informações do bot.
 **z!cat** = Gatinhos!!
 `
@@ -40,11 +40,11 @@ module.exports.run = async(client, message, args) =>{
 },
           {
             name: "Sobre mim",
-            value: "Bem, fui criado  programado pelos <@350772260031954944> <@446430624149143564> <@479364245914517524> com o objetivo de ajuda e diverti todo mundo!"
+            value: "Bem, fui criado e programado por: <@350772260031954944> <@446430624149143564> <@479364245914517524>"
           },
           {
-            name: "Zira BOT",
-            value: `z!discord | Para entrar no meu grupo!`
+            name: "Entre em meu grupo do discord",
+            value: `z!discord`
 
           }, 
         
