@@ -7,6 +7,11 @@ var comandos = new Discord.Collection();
 
 client.login(process.env.BOT_TOKEN);
 
+client.on("ready", () => {
+  console.log("Ativado.");
+   let gameloop = require('./comando_dono/loop.js'); // Ativaidae de status!!!!!!!!!!
+    gameloop.run(client);
+})
 
     console.log('O Bot foi iniciado com sucesso.'.green);
     console.log(`O meu prefixo é ${prefix}`);
