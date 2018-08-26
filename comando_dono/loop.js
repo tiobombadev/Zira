@@ -17,7 +17,7 @@ module.exports.run = async (client) =>{
         await sleep(60000)
         client.user.setPresence({ game: { name: "z!ajuda | z!discord", type: 0 } });
         await sleep(60000)
-        client.user.setPresence({ game: { name: `${client.users.size} Me Usam! ðŸ˜`, type: 3} });
+        client.user.setPresence({ game: { name: `${client.users.size} Me Usarem! ðŸ˜`, type: 3} });
         await sleep(60000)
     }
    
