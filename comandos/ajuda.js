@@ -1,6 +1,6 @@
 module.exports.run = async(client, message, args) =>{
   message.delete();  
-  message.reply(`mandei as informações no privado! da uma checada lá <:blobs_piscadinha:421801047493967872>`);
+  message.reply(`Mandei meus comandos no seu privado.`);
   message.author.send({embed: {
         color: 12584993,
         author: {
