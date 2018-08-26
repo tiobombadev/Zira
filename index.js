@@ -5,7 +5,7 @@ const ownerID = `350772260031954944`;
 const prefix = `z!` ;
 var comandos = new Discord.Collection();
 
-client.login(process.env.BOT_TOKEN);
+client.login('NDgxMjM0NjQ4NjI2NjI2NTgw.DmSxxw.Df1QAp6s9xWOMFseiZthqmwdfqk');
 
 client.on("ready", () => {
     client.user.setGame(`🎈 z!ajuda | z!discord 🎈`, 'https://twitch.tv/ZiraMC')
