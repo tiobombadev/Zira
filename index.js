@@ -58,24 +58,6 @@ client.on('message', message => {
     message.channel.send('Meu Convite: https://discordapp.com/oauth2/authorize?client_id=481234648626626580&scope=bot&permissions=2146958847');
 
 });
-client.on('message', message => {
-    if(message.content.startsWith("z!serverinfo")){
-        let sicon = message.guild.iconURL;
-        let serverembed = new Discord.RichEmbed()
-        
-        .setColor("#15f153")
-        .setThumbnail(sicon)
-        .addField(":wave: Informções Do Servidor", "Veja As Informações Do Servidor !") // By Super
-        .addField(":rocket: Nome do Server:", message.guild.name) // By Super
-        .addField(":crown: Criador:", message.guild.owner) // By Super
-        .addField(":date: Criado Em:", message.guild.createdAt) // By Super
-        .addField(":star2: Você Entrou Em:", message.member.joinedAt) // By Super
-        .addField(":earth_americas: Região Do Servidor:", message.guild.region) // By Super
-        .addField(":bust_in_silhouette: Membros No Servidor:", message.guild.memberCount); // By Super
-    
-        return message.channel.send(serverembed);
-      }
-});
 
 
 client.on('message', message => {
