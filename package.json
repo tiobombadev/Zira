@@ -1,16 +1,13 @@
 {
-  "name": "pandabot",
-  "version": "1.0.0",
-  "description": "PANDABOT | 2 SERVER |",
+  "name": "Zira",
+  "description": "Zira",
+  "version": "0.0.0"
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.3.2",
-    "ms": "^2.1.1"
+    "discord.js": "11.1.0",
+    "ms": "2.81.0"
   }
 }
