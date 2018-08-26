@@ -1,1 +1,27 @@
-var _0x3cee=['author','tag','\x20usou\x20o\x20comando\x20','catch','exports','run','content','split','moment/moment','locale','pt-BR','guild','createdAt','channel','send','name','iconURL',':checkered_flag:\x20__**Server\x20Info:**__','**Informações\x20do\x20servidor!**\x0a\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20',':page_facing_up:__**ID:**__\x20','\x20:date:__**Grupo\x20Criado\x20em:**__','format',':bookmark_tabs:\x20__**Canais**__\x20\x20',':man_dancing:__**Membros**__\x20','members',':low_brightness:__**Cargos:**__\x20','roles','size',':thinking:__**Emojis:**__:cookie:','emojis','\x20:hammer_pick:__**OwnerShip:**__\x20\x20','__**Região**__\x20:earth_africa:','region','then','log'];(function(_0x5c086e,_0x168688){var _0x10061f=function(_0x983eb7){while(--_0x983eb7){_0x5c086e['push'](_0x5c086e['shift']());}};_0x10061f(++_0x168688);}(_0x3cee,0x162));var _0x1d9b=function(_0x3e49a1,_0x27a4ce){_0x3e49a1=_0x3e49a1-0x0;var _0x24c9fe=_0x3cee[_0x3e49a1];return _0x24c9fe;};module[_0x1d9b('0x0')][_0x1d9b('0x1')]=async(_0x43d661,_0xa29dc0,_0x1964ae)=>{let _0x4ed851=_0xa29dc0[_0x1d9b('0x2')][_0x1d9b('0x3')]()['slice'](0x0);var _0xbd2a48=require(_0x1d9b('0x4'));_0xbd2a48[_0x1d9b('0x5')](_0x1d9b('0x6'));const _0x1688b1=_0xa29dc0[_0x1d9b('0x7')][_0x1d9b('0x8')];_0xa29dc0[_0x1d9b('0x9')][_0x1d9b('0xa')]({'embed':{'author':{'name':_0xa29dc0[_0x1d9b('0x7')][_0x1d9b('0xb')],'icon_url':_0xa29dc0[_0x1d9b('0x7')][_0x1d9b('0xc')]},'title':_0x1d9b('0xd'),'description':_0x1d9b('0xe'),'color':0xbfff,'timestamp':new Date(),'footer':{'icon_url':_0xa29dc0['guild'][_0x1d9b('0xc')],'text':_0xa29dc0[_0x1d9b('0x7')]['name']},'thumbnail':{'url':_0xa29dc0[_0x1d9b('0x7')][_0x1d9b('0xc')]},'fields':[{'name':_0x1d9b('0xf'),'value':_0xa29dc0[_0x1d9b('0x7')]['id'],'inline':!![]},{'name':_0x1d9b('0x10'),'value':'**'+_0xbd2a48(_0x1688b1)[_0x1d9b('0x11')]('LL')+'**','inline':!![]},{'name':_0x1d9b('0x12'),'value':_0xa29dc0['guild']['channels']['size'],'inline':!![]},{'name':_0x1d9b('0x13'),'value':_0xa29dc0[_0x1d9b('0x7')][_0x1d9b('0x14')]['size'],'inline':!![]},{'name':_0x1d9b('0x15'),'value':_0xa29dc0[_0x1d9b('0x7')][_0x1d9b('0x16')][_0x1d9b('0x17')],'inline':!![]},{'name':_0x1d9b('0x18'),'value':_0xa29dc0[_0x1d9b('0x7')][_0x1d9b('0x19')][_0x1d9b('0x17')],'inline':!![]},{'name':_0x1d9b('0x1a'),'value':'<@'+_0xa29dc0[_0x1d9b('0x7')]['ownerID']+'>','inline':!![]},{'name':_0x1d9b('0x1b'),'value':_0xa29dc0['guild'][_0x1d9b('0x1c')],'inline':!![]}]}})[_0x1d9b('0x1d')](_0x56bde4=>console[_0x1d9b('0x1e')](_0xa29dc0[_0x1d9b('0x1f')][_0x1d9b('0x20')]+_0x1d9b('0x21')+_0x4ed851))[_0x1d9b('0x22')](console['error']);};
+const Discord = require("discord.js");
+
+module.exports.run = async (bot, message, args) => {
+
+  let online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
+  let day = message.guild.createdAt.getDate()
+  let month = 1 + message.guild.createdAt.getMonth()
+  let year = message.guild.createdAt.getFullYear()
+   let sicon = message.guild.iconURL;
+   let serverembed = new Discord.RichEmbed()
+   .setAuthor(message.guild.name, sicon)
+   .setFooter(`Servidor criado • ${day}.${month}.${year}`)
+   .setColor("#ffffff")
+   .setTimestamp()
+   .setThumbnail(sicon)
+   .addField("ID:", message.guild.id, true)
+   .addField("Nome:", message.guild.name, true)
+   .addField("Dono:", message.guild.owner.user.tag, true)
+   .addField("Região:", message.guild.region, true)
+   .addField("Channels", message.guild.channels.size, true)
+   .addField("Membros:", message.guild.memberCount, true)
+   .addField("Bots:", message.guild.members.filter(m => m.user.bot).size, true)
+   .addField("Onlines:", online.size, true)
+   .addField("Tags:", message.guild.roles.size, true);
+   message.channel.send(serverembed);
+
+}
