@@ -1,32 +1,26 @@
-module.exports.run = async(client, message, args) =>{
-}
-const Discord = require('discord.js')
-exports.run = function (client, message, args) {
+const Discord = require("discord.js");
 
-    let messagecount = parseInt(args.join(' '));
+module.exports.run = async (client, message, args) =>{
 
-    if(!message.member.roles.some(r=>["Staff"].includes(r.name)) )
-    return message.reply("Você precisa do cargo `Staff` para poder limpar o chat.");
-    
-    message.channel.fetchMessages({
-        limit: messagecount
-    }).then(messages => message.channel.bulkDelete(messages));
+   message.delete().catch(O_o=>{});
 
-    const embed = new Discord.RichEmbed()
-        .setDescription(`Chat Limpo`)
+   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("você não tem permissão! :x:");
+   
+   const comousar = new Discord.RichEmbed()
+   .setTitle("Comando: z!limpar")
+   .setDescription(`Como usar:\n
+**Descrição:** Limpar o chat dos servidores.
+**Modo de usar:** z!limpar
+**Exemplo:** z!limpar 100`);
 
-message.channel.send({embed});
-}
+   const num = args.join(" ");
 
-exports.conf = {
-    enabled: true,
-    guildOnly: false,
-    aliases: [],
-    permLevel: 2
-}
-
-exports.help = {
-    name: 'purge',
-    description: 'Purges X amount of messages from a given channel.',
-    usage: 'purge <number>'
+   if(!num) return message.channel.send(comousar).then(msg => msg.delete(10000));
+   if(isNaN(num) == true) return message.reply(":x: **|** Você só pode usar números de 10 a 100 para limpar o chat.").then(msg => msg.delete(10000));
+   if(num < 2) return message.reply(":x: **|** Ops... Você tem que digitar um número maior que 2 para deletar mensagens.").then(msg => msg.delete(8000));
+   if(num > 100) return message.reply(":x: **|** Ops... Digite um número mais que 2.").then(msg => msg.delete(8000));
+   message.channel.bulkDelete(args[0]).catch(error => message.reply(`mensagens de 2 semanas atrás não podem ser limpas.`));
+   
+   message.channel.send(`Chat limpo por ${message.author}`).then(msg => msg.delete(5000));
+   
 }
