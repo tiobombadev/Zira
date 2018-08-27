@@ -1,18 +1,10 @@
-module.exports.run = async(client, message, args) =>{
+const Discord = require("discord.js");
 
+module.exports.run = async (client, message, args) => {
 
-  const sayMessage = args.join("p!say");
-// Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
-message.delete().catch(O_o=>{}); 
-// And we get the bot to say the thing: 
-message.channel.send(sayMessage);
-}
-module.exports.run = async(client, message, args) =>{
+      if(!message.member.hasPermission("SEND_MESSAGE")) return;
+      const sayMessage = args.join(" ");
+      message.delete().catch();
+      message.channel.send(sayMessage);
 
-
-  const sayMessage = args.join("z!say");
-// Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
-message.delete().catch(O_o=>{}); 
-// And we get the bot to say the thing: 
-message.channel.send(sayMessage);
 }
