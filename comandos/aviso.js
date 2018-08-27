@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
       if(!message.member.hasPermission("ADMINISTRATOR")) return;
       const embed = new Discord.RichEmbed()
       .setColor('RANDOM')
-      .setAuthor('ANÚNCIO', "https://cdn.discordapp.com/emojis/450112878108999680.gif?v=1")
+      .setAuthor('AVISO', "https://cdn.discordapp.com/emojis/450112878108999680.gif?v=1")
       .setFooter(`Aviso feito por: ${message.author.username}`, message.author.avatarURL)
       .setDescription("" + args.join(" "));
       message.channel.send("@everyone").then(a=>a.delete(1));
