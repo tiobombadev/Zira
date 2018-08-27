@@ -1,11 +1,11 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (client, message, args) => {
 
       if(!message.member.hasPermission("ADMINISTRATOR")) return;
       const embed = new Discord.RichEmbed()
       .setColor('RANDOM')
-      .setAuthor('ANÚNCIO', "https://cdn.discordapp.com/emojis/450112878108999680.gif?v=1")
+      .setAuthor('ANÚNCIO', ":mega:")
       .setFooter(`Aviso feito por: ${message.author.username}`, message.author.avatarURL)
       .setDescription("" + args.join(" "));
       message.channel.send("@everyone").then(a=>a.delete(1));
