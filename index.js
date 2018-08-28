@@ -8,36 +8,38 @@ var comandos = new Discord.Collection();
 client.login(process.env.BOT_TOKEN);
 
 client.on("ready", () => {
-  console.log("Ativado.");
-   let gameloop = require('./comando_dono/loop.js'); // Ativaidae de status!!!!!!!!!!
-    gameloop.run(client);
+    client.user.setGame(`ðŸŽˆ z!ajuda | z!discord ðŸŽˆ`, 'https://twitch.tv/ZiraMC')
 })
-client.on('guildMemberAdd', member => {
-        const bemvindo = member.guild.channels.find('name', 'entrada') //créditos PrimoDoBiscoito#0700
-        var canalentradaesaida = new Discord.RichEmbed()
-       
-          .setAuthor(member.user.tag + '', member.user.displayAvatarURL) //créditos PrimoDoBiscoito#0700
-          .setDescription(`Bem-vindo **${member.user.tag}** ao servidor!`) //créditos PrimoDoBiscoito#0700
-          .setFooter(`Entrou no servidor.`) //créditos PrimoDoBiscoito#0700
-          .setThumbnail(member.user.displayAvatarURL) //créditos PrimoDoBiscoito#0700
-          .setTimestamp() //créditos PrimoDoBiscoito#0700
-          return bemvindo.send(canalentradaesaida); //créditos PrimoDoBiscoito#0700
-      });
-      client.on('guildMemberRemove', member => {
-        const canalsaiu = member.guild.channels.find('name', 'saida') //créditos PrimoDoBiscoito#0700
-      //créditos PrimoDoBiscoito#0700
-        var canalentradaesaida = new Discord.RichEmbed() //créditos PrimoDoBiscoito#0700
-    
-          .setAuthor(member.user.tag + '', member.user.displayAvatarURL) //créditos PrimoDoBiscoito#0700
-          .setDescription(`**${member.user.tag}** saiu do servidor!`) //créditos PrimoDoBiscoito#0700
-          .setFooter(`Saiu do servidor.`) //créditos PrimoDoBiscoito#0700
-          .setThumbnail(member.user.displayAvatarURL) //créditos PrimoDoBiscoito#0700
-          .setTimestamp() //créditos PrimoDoBiscoito#0700
-          return canalsaiu.send(canalentradaesaida); //créditos PrimoDoBiscoito#0700
-      });
+
 
     console.log('O Bot foi iniciado com sucesso.'.green);
-    console.log(`O meu prefixo é ${prefix}`);
+    console.log(`O meu prefixo Ã© ${prefix}`);
+
+
+
+    client.on('guildMemberAdd', member => {
+        const bemvindo = member.guild.channels.find('name', 'entrada') //crÃ©ditos PrimoDoBiscoito#0700
+        var canalentradaesaida = new Discord.RichEmbed()
+       
+          .setAuthor(member.user.tag + '', member.user.displayAvatarURL) //crÃ©ditos PrimoDoBiscoito#0700
+          .setDescription(`Bem-vindo **${member.user.tag}** ao servidor!`) //crÃ©ditos PrimoDoBiscoito#0700
+          .setFooter(`Entrou no servidor.`) //crÃ©ditos PrimoDoBiscoito#0700
+          .setThumbnail(member.user.displayAvatarURL) //crÃ©ditos PrimoDoBiscoito#0700
+          .setTimestamp() //crÃ©ditos PrimoDoBiscoito#0700
+          return bemvindo.send(canalentradaesaida); //crÃ©ditos PrimoDoBiscoito#0700
+      });
+      client.on('guildMemberRemove', member => {
+        const canalsaiu = member.guild.channels.find('name', 'saida') //crÃ©ditos PrimoDoBiscoito#0700
+      //crÃ©ditos PrimoDoBiscoito#0700
+        var canalentradaesaida = new Discord.RichEmbed() //crÃ©ditos PrimoDoBiscoito#0700
+    
+          .setAuthor(member.user.tag + '', member.user.displayAvatarURL) //crÃ©ditos PrimoDoBiscoito#0700
+          .setDescription(`**${member.user.tag}** saiu do servidor!`) //crÃ©ditos PrimoDoBiscoito#0700
+          .setFooter(`Saiu do servidor.`) //crÃ©ditos PrimoDoBiscoito#0700
+          .setThumbnail(member.user.displayAvatarURL) //crÃ©ditos PrimoDoBiscoito#0700
+          .setTimestamp() //crÃ©ditos PrimoDoBiscoito#0700
+          return canalsaiu.send(canalentradaesaida); //crÃ©ditos PrimoDoBiscoito#0700
+      });
 
 client.on('message', message => {
     if(message.content.toLowerCase() === 'z!invite')
@@ -47,7 +49,7 @@ client.on('message', message => {
 client.on('message', message => {
     if(message.content == '<@481234648626626580>'){
       var embed = new Discord.RichEmbed()
-      .setDescription(`**${message.author}**, meu prefix é \`z!\` \n Duvidas Entre Em Meu Grupo \`z!discord\`.`)
+      .setDescription(`**${message.author}**, meu prefix Ã© \`z!\` \n Duvidas Entre Em Meu Grupo \`z!discord\`.`)
       message.channel.send(embed)
     }
   });
@@ -56,7 +58,6 @@ client.on('message', message => {
     message.channel.send('Meu Convite: https://discordapp.com/oauth2/authorize?client_id=481234648626626580&scope=bot&permissions=2146958847');
 
 });
-
 
 client.on('message', message => {
 
