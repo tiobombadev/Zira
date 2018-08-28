@@ -1,7 +1,8 @@
 const Discord = require('discord.js');
 
 exports.run = async (client, message, args) => {
-    if (!message.member.hasPermission("ADMINISTRADOR")) return message.reply(":no_good::skin-tone-1: **|** Você não tem permissão!")
+    if(message.member.id == "350772260031954944") {
+    if (!message.member.hasPermission("ADMINISTRADOR")).return message.reply(":no_good::skin-tone-1: **|** Você não tem permissão!")
     let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
     if (!rMember) return message.reply("Por favor, forneça o usuário correto!")
     let role = args.join(" ").slice(22);
@@ -14,4 +15,5 @@ exports.run = async (client, message, args) => {
     await (rMember.addRole(aRole.id))
     message.channel.send(":white_check_mark: **|** Tag setada com sucesso!")
     return;
+}
 }
