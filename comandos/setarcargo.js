@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 
 exports.run = async (client, message, args) => {
-    if(message.member.id == "350772260031954944") {
     if (!message.member.hasPermission("CONECTAR")).return message.reply(":no_good::skin-tone-1: **|** Você não tem permissão!")
     let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
     if (!rMember) return message.reply("Por favor, forneça o usuário correto!")
@@ -16,4 +15,4 @@ exports.run = async (client, message, args) => {
     message.channel.send(":white_check_mark: **|** Tag setada com sucesso!")
     return;
 }
-}
+
