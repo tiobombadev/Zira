@@ -1,0 +1,11 @@
+var tagUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+
+          if(!message.member.hasPermission('MANAGE_ROLES')) return message.reply('**🙅Sem Permissão!**')
+          if(message.member.id == "350772260031954944") {
+
+          var cargoCmd = args.join(" ").slice(22);
+
+          var dev = message.guild.roles.find('name', `${cargoCmd}`)
+          message.guild.members.get(`${tagUser.id}`).addRole(dev)
+            message.reply('√ | Cargo Adicionado com sucesso!')
+            });
