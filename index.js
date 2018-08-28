@@ -12,6 +12,29 @@ client.on("ready", () => {
    let gameloop = require('./comando_dono/loop.js'); // Ativaidae de status!!!!!!!!!!
     gameloop.run(client);
 })
+client.on('guildMemberAdd', member => {
+        const bemvindo = member.guild.channels.find('name', 'entrada') //créditos PrimoDoBiscoito#0700
+        var canalentradaesaida = new Discord.RichEmbed()
+       
+          .setAuthor(member.user.tag + '', member.user.displayAvatarURL) //créditos PrimoDoBiscoito#0700
+          .setDescription(`Bem-vindo **${member.user.tag}** ao servidor!`) //créditos PrimoDoBiscoito#0700
+          .setFooter(`Entrou no servidor.`) //créditos PrimoDoBiscoito#0700
+          .setThumbnail(member.user.displayAvatarURL) //créditos PrimoDoBiscoito#0700
+          .setTimestamp() //créditos PrimoDoBiscoito#0700
+          return bemvindo.send(canalentradaesaida); //créditos PrimoDoBiscoito#0700
+      });
+      client.on('guildMemberRemove', member => {
+        const canalsaiu = member.guild.channels.find('name', 'saida') //créditos PrimoDoBiscoito#0700
+      //créditos PrimoDoBiscoito#0700
+        var canalentradaesaida = new Discord.RichEmbed() //créditos PrimoDoBiscoito#0700
+    
+          .setAuthor(member.user.tag + '', member.user.displayAvatarURL) //créditos PrimoDoBiscoito#0700
+          .setDescription(`**${member.user.tag}** saiu do servidor!`) //créditos PrimoDoBiscoito#0700
+          .setFooter(`Saiu do servidor.`) //créditos PrimoDoBiscoito#0700
+          .setThumbnail(member.user.displayAvatarURL) //créditos PrimoDoBiscoito#0700
+          .setTimestamp() //créditos PrimoDoBiscoito#0700
+          return canalsaiu.send(canalentradaesaida); //créditos PrimoDoBiscoito#0700
+      });
 
     console.log('O Bot foi iniciado com sucesso.'.green);
     console.log(`O meu prefixo é ${prefix}`);
