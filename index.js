@@ -60,8 +60,9 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if(message.content.toLowerCase() === 'z!secretodivulgar')
-    message.channel.send('@everyone \n \n Está Procurando Uma Comunidade Legal ? \n Nossos Conteudos: NSFW , Jogos , Animes , Bots do discord, Plugins , etc.. \n Link: https://discord.gg/qfkFSUj')
+    message.channel.send('@everyone \n \n Está Procurando Uma Comunidade Legal ? \n Nossos Conteudos: NSFW , Jogos , Animes , Bots do discord, Plugins , etc.. \n Link: https://discord.gg/qfkFSUj');
 
+});
 client.on('message', message => {
 
     var autor = message.author;
