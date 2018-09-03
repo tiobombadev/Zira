@@ -20,25 +20,25 @@ client.on("ready", () => {
 
 
     client.on('guildMemberAdd', member => {
-  const bemvindo = member.guild.channels.find('name', 'entrada')
-
-  var canalentradaesaida = new Discord.RichEmbed()
-    .setColor('00FF00')
-    .setAuthor(member.user.tag + '', member.user.displayAvatarURL)
-    .setDescription(`:inbox_tray: **|** Bem-vindo **${member.user.tag}** ao servidor!`)
-    .setFooter(`Entrou`)
-    .setTimestamp()
-    return bemvindo.send(canalentradaesaida);
-});
-// comando criado por PrimoDoBiscoito#0700
-client.on('guildMemberRemove', member => {
-  const canalsaiu = member.guild.channels.find('name', 'entrada')
-
-  var canalentradaesaida = new Discord.RichEmbed()
-    .setColor('#FF0000')
-    .setAuthor(member.user.tag + '', member.user.displayAvatarURL)
-    .setDescription(`:outbox_tray: **|** **${member.user.tag}** saiu do servidor!`)
-    .setFooter(`Saiu`)
-    .setTimestamp()
-    return canalsaiu.send(canalentradaesaida);
-});
+        const bemvindo = member.guild.channels.find('name', 'entrada') //crÃ©ditos PrimoDoBiscoito#0700
+        var canalentradaesaida = new Discord.RichEmbed()
+       
+          .setAuthor(member.user.tag + '', member.user.displayAvatarURL) //crÃ©ditos PrimoDoBiscoito#0700
+          .setDescription(`Bem-vindo **${member.user.tag}** ao servidor!`) //crÃ©ditos PrimoDoBiscoito#0700
+          .setFooter(`Entrou no servidor.`) //crÃ©ditos PrimoDoBiscoito#0700
+          .setThumbnail(member.user.displayAvatarURL) //crÃ©ditos PrimoDoBiscoito#0700
+          .setTimestamp() //crÃ©ditos PrimoDoBiscoito#0700
+          return bemvindo.send(canalentradaesaida); //crÃ©ditos PrimoDoBiscoito#0700
+      });
+      client.on('guildMemberRemove', member => {
+        const canalsaiu = member.guild.channels.find('name', 'saida') //crÃ©ditos PrimoDoBiscoito#0700
+      //crÃ©ditos PrimoDoBiscoito#0700
+        var canalentradaesaida = new Discord.RichEmbed() //crÃ©ditos PrimoDoBiscoito#0700
+    
+          .setAuthor(member.user.tag + '', member.user.displayAvatarURL) //crÃ©ditos PrimoDoBiscoito#0700
+          .setDescription(`**${member.user.tag}** saiu do servidor!`) //crÃ©ditos PrimoDoBiscoito#0700
+          .setFooter(`Saiu do servidor.`) //crÃ©ditos PrimoDoBiscoito#0700
+          .setThumbnail(member.user.displayAvatarURL) //crÃ©ditos PrimoDoBiscoito#0700
+          .setTimestamp() //crÃ©ditos PrimoDoBiscoito#0700
+          return canalsaiu.send(canalentradaesaida); //crÃ©ditos PrimoDoBiscoito#0700
+      });
