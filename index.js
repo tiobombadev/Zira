@@ -20,8 +20,25 @@ client.on("ready", () => {
 
 
     client.on('guildMemberAdd', member => {
-        const bemvindo = member.guild.channels.find('name', 'entrada') //crÃ©ditos PrimoDoBiscoito#0700
-        var canalentradaesaida = new Discord.RichEmbed()
-       
-          .setAuthor(member.user.tag + '', member.user.displayAvatarURL) //crÃ©ditos PrimoDoBiscoito#0700
-          .setDescript
+  const bemvindo = member.guild.channels.find('name', 'novos-membros')
+
+  var canalentradaesaida = new Discord.RichEmbed()
+    .setColor('00FF00')
+    .setAuthor(member.user.tag + '', member.user.displayAvatarURL)
+    .setDescription(`:inbox_tray: **|** Bem-vindo **${member.user.tag}** ao servidor!`)
+    .setFooter(`Entrou`)
+    .setTimestamp()
+    return bemvindo.send(canalentradaesaida);
+});
+// comando criado por PrimoDoBiscoito#0700
+client.on('guildMemberRemove', member => {
+  const canalsaiu = member.guild.channels.find('name', 'novos-membros')
+
+  var canalentradaesaida = new Discord.RichEmbed()
+    .setColor('#FF0000')
+    .setAuthor(member.user.tag + '', member.user.displayAvatarURL)
+    .setDescription(`:outbox_tray: **|** **${member.user.tag}** saiu do servidor!`)
+    .setFooter(`Saiu`)
+    .setTimestamp()
+    return canalsaiu.send(canalentradaesaida);
+});
