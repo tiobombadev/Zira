@@ -20,7 +20,7 @@ client.on("ready", () => {
 
 
     client.on('guildMemberAdd', member => {
-  const bemvindo = member.guild.channels.find('name', 'novos-membros')
+  const bemvindo = member.guild.channels.find('name', 'entrada')
 
   var canalentradaesaida = new Discord.RichEmbed()
     .setColor('00FF00')
@@ -32,7 +32,7 @@ client.on("ready", () => {
 });
 // comando criado por PrimoDoBiscoito#0700
 client.on('guildMemberRemove', member => {
-  const canalsaiu = member.guild.channels.find('name', 'novos-membros')
+  const canalsaiu = member.guild.channels.find('name', 'entrada')
 
   var canalentradaesaida = new Discord.RichEmbed()
     .setColor('#FF0000')
