@@ -35,6 +35,8 @@ module.exports.run = async(client, message, args) =>{
 **z!puppy** = Cachorrinhos!!
 **z!botinfo** = Irá mandar informações do bot.
 **z!cat** = Gatinhos!!
+**z!votacao** = Fazer uma votação.
+**z!aviso** = Fazer um aviso.
 `
           
 },
