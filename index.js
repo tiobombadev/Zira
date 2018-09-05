@@ -47,6 +47,11 @@ client.on('message', message => {
 
 });
 client.on('message', message => {
+    if(message.content.toLowerCase() === 'z!discordzira')
+    message.channel.send('@everyone \n \n Olá , eu venho le convidar para meu grupo!! \n Meu Condominio com o bot **Shiina** , Entre já <3 \n \n Link: https://discord.gg/SJYjvN2');
+
+});
+client.on('message', message => {
     if(message.content == '<@481234648626626580>'){
       var embed = new Discord.RichEmbed()
       .setDescription(`**${message.author}**, meu prefix Ã© \`z!\` \n Duvidas Entre Em Meu Grupo \`z!discord\`.`)
