@@ -8,7 +8,9 @@ var comandos = new Discord.Collection();
 client.login(process.env.BOT_TOKEN);
 
 client.on("ready", () => {
-    client.user.setGame(`Estou em ${client.guilds.size} Grupos obrigado Galera!`, 'https://twitch.tv/ZiraMC')
+  console.log("Ativado.");
+   let gameloop = require('./comando_dono/loop.js'); // Ativaidae de status!!!!!!!!!!
+    gameloop.run(client);
 })
 
 
