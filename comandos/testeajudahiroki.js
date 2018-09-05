@@ -11,18 +11,14 @@ module.exports.run = async (client, message, args) => {
     \n\`Selecione alguma categoria para ver o comando.\`
     \n🔩 **»** Comandos de Moderação
     \n📋 **»** Outros comandos
-    \n🤝 **»** Parceria`)
     message.member.send(msg1).then(msg=> {
         msg.react("🔩").then(r => {
-            msg.react("📋")
-                msg.react("🤝");
+            msg.react("📋");
 
             const comandos = (reaction, user) => reaction.emoji.name === '🔩' && user.id === message.author.id;
             const geral = (reaction, user) => reaction.emoji.name === "📋" && user.id === message.author.id;
-            const parceria = (reaction, user) => reaction.emoji.name === "🤝" && user.id === message.author.id;
             const eqp = msg.createReactionCollector(comandos, { time: 60000});
             const grl = msg.createReactionCollector(geral, { time: 60000});
-            const prc = msg.createReactionCollector(parceria, { time: 60000});
 
             eqp.on('collect', r=> {
                 const embed = new Discord.RichEmbed()
@@ -48,7 +44,7 @@ module.exports.run = async (client, message, args) => {
                 const glr = new Discord.RichEmbed()
                 .setAuthor("📋 Outros comandos")
                 .setColor('RANDOM')
-                .setDescription(`**h!ajuda** - Onde mostra todos os comandos do bot.
+                .setDescription(`**z!ajuda** - Onde mostra todos os comandos do bot.
                 \n**z!invite** - Link para me adicionar em seu servidor.
                 \n**z!convite** - LInk para me adicionar em seu servidor.
                 \n**z!botinfo** - Para saber um pouco mais sobre mim.
@@ -58,16 +54,8 @@ module.exports.run = async (client, message, args) => {
                 \n**z!serverinfo** - Para ver as informações do seu servidor.`)
                 message.author.send({ embed: glr }).then(a=>a.delete(15000));
             })
-                        prc.on('collect', r=>{
-                const prc = new Discord.RichEmbed()
-                .setAuthor("🤝 Parceria")
-                .setColor('RANDOM')
-                .addField("Você está querendo uma parceria comigo?","Para ser meu parcerio basta você sempre estar ativo em meu servidor de **suporte** ajudando os membros com dúvidas.")
-                .addField("Benefícios","Você pode ter minha versão PRO, que é apenas para parceiros. E também ira receber tag especial.")
-                message.author.send({ embed: prc}).then(a=>a.delete(15000));
-            })
         })
-    })
+})
 }
 //
 module.exports.help = {
