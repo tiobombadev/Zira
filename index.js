@@ -62,7 +62,7 @@ client.on('message', message => {
   });
 client.on('message', message => {
     if(message.content.toLowerCase() === 'z!convidar')
-    message.channel.send('Meu Convite: https://discordapp.com/oauth2/authorize?client_id=481234648626626580&scope=bot&permissions=2146958847');
+    message.channel.send('Meu Convite Pra Me Adicionar: https://discordapp.com/oauth2/authorize?client_id=481234648626626580&scope=bot&permissions=2146958847');
 
 });
 
