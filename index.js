@@ -65,6 +65,11 @@ client.on('message', message => {
     message.channel.send('Meu Convite: https://discordapp.com/oauth2/authorize?client_id=481234648626626580&scope=bot&permissions=2146958847');
 
 });
+client.on('message', message => {
+    if(message.content.toLowerCase() === 'treta')
+    message.channel.send('TRETAA , AAAAAHHH , CORRE BERGUE É TRETA AAAAH');
+
+});
 
 client.on('message', message => {
 
