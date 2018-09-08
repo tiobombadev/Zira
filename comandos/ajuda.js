@@ -37,6 +37,8 @@ module.exports.run = async(client, message, args) =>{
 **z!cat** = Gatinhos!!
 **z!votacao** = Fazer uma votação.
 **z!aviso** = Fazer um aviso.
+**z!conquista** = Fazer uma conquista.
+**z!piada** = O Bot irá fazer uma piada.
 `
           
 },
